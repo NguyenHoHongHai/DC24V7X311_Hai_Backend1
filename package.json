@@ -1,0 +1,16 @@
+{
+  "name": "dc24v7x311_nguyenhohonghai_backend1_part-1",
+  "version": "1.0.0",
+  "description": "ContactBook Backend - Backend Part 1",
+  "license": "ISC",
+  "author": "Nguyen Ho Hong Hai - DC24V7X311",
+  "type": "commonjs",
+  "main": " server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
