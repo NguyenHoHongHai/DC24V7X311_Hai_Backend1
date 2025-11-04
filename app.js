@@ -14,3 +14,21 @@ app.get("/", (req, res) => {
 });
 
 module.exports = app;
+// --------------------
+// Xử lý lỗi 404 và lỗi chung
+// --------------------
+const ApiError = require("./app/api-error");
+
+// Xử lý lỗi khi không tìm thấy route
+app.use((req, res, next) => {
+  return next(new ApiError(404, "Resource not found"));
+});
+
+// Middleware xử lý lỗi tập trung
+app.use((err, req, res, next) => {
+  return res.status(err.statusCode || 500).json({
+    message: err.message || "Internal Server Error",
+  });
+});
+
+module.exports = app;
